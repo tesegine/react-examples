@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- You can use this method without the babelstandalone script above in the head -->
+    <!-- <script type="text/javascript">
+      const rootElement = document.getElementById("root");
+
+      const element = React.createElement("div", {
+        className: "container",
+        children: ["Hello to you my friend, ", "Message my friend, ", "We lit."]
+      });
+
+      console.log(element);
+      ReactDOM.render(element, rootElement);
+    </script> -->
+
+    <!-- OR this way
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const element = (
+        <div className="container"> We turning shit up tonight </div>
+      );
+
+      ReactDOM.render(element, rootElement); -->
+    <!-- </script> -->
+
+    <!-- OR THIS WAY BELOW. -->
+
+    <script type="text/babel">
+      // function MyApp() {
+      //   return (
+      //     <div>
+      //       <h1>Liam Esegine</h1>
+      //       <p>I am the grand son of Abarika</p>
+      //       <ul>
+      //         <li>Libby</li>
+      //         <li>Libby</li>
+      //         <li>Libby</li>
+      //       </ul>
+      //       <h3>That's my sister</h3>
+
+      //       <textarea
+      //         name="text"
+      //         id=""
+      //         cols="30"
+      //         rows="10"
+      //         placeholder="description"
+      //       ></textarea>
+      //       <button type="submit">Submit</button>
+      //     </div>
+      //   );
+      // }
+
+      // ReactDOM.render(<MyApp />, document.getElementById("root"));
+
+      // class Barz extends React.Component {
+      //   render() {
+      //     return <h2>Hello to you too</h2>;
+      //   }
+      // }
+
+      // FUNCTION COMPONENT
+      // function Barz() {
+      //   return <h2>I'm a car too</h2>;
+      // }
+      // ReactDOM.render(<Barz />, document.getElementById("root"));
+
+      // class Car extends React.Component {
+      //   constructor() {
+      //     super();
+      //     this.state = { color: "red" };
+      //   }
+      //   render() {
+      //     return <h1>I am a {this.state.color} car!</h1>;
+      //   }
+      // }
+
+      // ReactDOM.render(<Car />, document.getElementById("root"));
+
+      // class Car extends React.Component {
+      //   render() {
+      //     return <h1>I am a {this.props.color} Jeep!</h1>;
+      //   }
+      // }
+
+      // ReactDOM.render(<Car color="red" />, document.getElementById("root"));
+
+      //   Using the state Object
+      // class Car extends React.Component {
+      //   state = {
+      //     brand: "Ford",
+      //     model: "Mustang",
+      //     color: "red",
+      //     year: "1964"
+      //   };
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My {this.state.brand}</h1>
+      //         <p>
+      //           is a {this.state.color}
+      //           {this.state.model} from {this.state.year}
+      //         </p>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(<Car />, document.getElementById("root"));
+
+      // REACT STATE
+
+      // class Car extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = {
+      //       brand: "Ford",
+      //       model: "Mustang",
+      //       color: "red",
+      //       year: "1983"
+      //     };
+      //   }
+
+      //   changeColor = () => {
+      //     this.setState({ color: "blue" });
+      //   };
+
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My {this.state.brand} </h1>
+      //         <p>
+      //           It is a {this.state.color} {this.state.model} from
+      //           {this.state.year}.
+      //         </p>
+      //         <button type="button" onClick={this.changeColor}>
+      //           Change Color
+      //         </button>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(<Car />, document.getElementById("root"));
+
+      // @@@@@@@@@ REACT LIFECYCLE  Constructor Method @@@@@@@
+
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favouriteColor: "Blue" };
+      //   }
+      //   render() {
+      //     return <h1>My favourite color is {this.state.favouriteColor}</h1>;
+      //   }
+      // }
+
+      // ReactDOM.render(<Header />, document.getElementById("root"));
+
+      // @@@@@@@@@@@@@@ getDerivedStateFromProps();   @@@@@@@@@@@@
+
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favoriteColor: "Red" };
+      //   }
+      //   static getDerivedStateFromProps(props, state) {
+      //     return { favoriteColor: props.favcol };
+      //   }
+
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My favorite color is {this.state.favoriteColor}</h1>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(
+      //   <Header favcol="Green" />,
+      //   document.getElementById("root")
+      // );
+
+      //@@@@@@@@@@  componentDidMount()  @@@@@@@@@@@@
+
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favoriteColor: "Pink" };
+      //   }
+
+      //   componentDidMount() {
+      //     setTimeout(() => {
+      //       this.setState({ favoriteColor: "Yellow" });
+      //     }, 2000);
+      //   }
+
+      //   render() {
+      //     return <h1>My favorite color is {this.state.favoriteColor}</h1>;
+      //   }
+      // }
+
+      // ReactDOM.render(<Header />, document.getElementById("root"));
+
+      //   @@@@@   UPDATE getDerivedStateFromProps  @@@@@@@@
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favoriteColor: "Red" };
+      //   }
+
+      //   static getDerivedStateFromProps(props, state) {
+      //     return { favoriteColor: props.favcol };
+      //   }
+
+      //   changeColor = () => {
+      //     this.setState({ favoriteColor: "Blue" });
+      //   };
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My favorite color is {this.state.favoriteColor}</h1>
+      //         <button type="button" onClick={this.changeColor}>
+      //           Change Color
+      //         </button>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(
+      //   <Header favcol="Aqua" />,
+      //   document.getElementById("root")
+      // );
+      //   @@@@@shouldComponentUpdate() @@@@@@@
+
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favoriteColor: "Aqua" };
+      //   }
+      //   shouldComponentUpdate() {
+      //     return false;
+      //   }
+
+      //   changeColor = () => {
+      //     this.setState({ favoriteColor: "Tomato" });
+      //   };
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My fav color is {this.state.favoriteColor}</h1>
+      //         <button type="button" onClick={this.changeColor}>
+      //           Change Color
+      //         </button>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(<Header />, document.getElementById("root"));
+
+      // @@@@getSnapshotBeforeUpdate && componentDidUpdate()@@@@@@
+
+      // class Header extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { favoriteColor: "Yellow" };
+      //   }
+      //   componentDidMount() {
+      //     setTimeout(() => {
+      //       this.setState({ favoriteColor: "Brown" });
+      //     }, 3000);
+      //   }
+
+      //   getSnapshotBeforeUpdate(prevProps, prevState) {
+      //     document.getElementById("div1").innerHTML =
+      //       "Before update favorite was " + prevState.favoriteColor;
+      //   }
+
+      //   componentDidUpdate() {
+      //     document.getElementById("div2").innerHTML =
+      //       "After update fav color was " + this.state.favoriteColor;
+      //   }
+
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>My favorite color is {this.state.favoriteColor}</h1>
+      //         <div id="div1"></div>
+      //         <div id="div2"></div>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // ReactDOM.render(<Header />, document.getElementById("root"));
+
+      //  @@@@@@ componentDidUpdate()  @@@@@@@@
+      //   class Header extends React.Component {
+      //     constructor(props) {
+      //       super(props);
+      //       this.state = { favoriteColor: "Green" };
+      //     }
+
+      //     componentDidMount() {
+      //       setTimeout(() => {
+      //         this.setState({ favoriteColor: "Aqua" });
+      //       }, 2000);
+      //     }
+
+      //     componentDidUpdate() {
+      //       document.getElementById("mydiv").innerHTML =
+      //         "Updated color is " + this.state.favoriteColor;
+      //     }
+
+      //     render() {
+      //       return (
+      //         <div>
+      //           <h1>My Favourite Color is {this.state.favoriteColor}</h1>
+      //           <p id="mydiv"></p>
+      //         </div>
+      //       );
+      //     }
+      //   }
+
+      //   ReactDOM.render(<Header />, document.getElementById("root"));
+      //   @@@@@@ componentWillUnmount()  @@@@@@@@@@
+      // class Container extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = { show: true };
+      //   }
+      //   delHeader = () => {
+      //     this.setState({ show: false });
+      //   };
+
+      //   render() {
+      //     let myheader = myheader;
+      //     if (this.state.show) {
+      //       myheader = <Child />;
+      //     }
+      //     return (
+      //       <div>
+      //         {myheader}
+      //         <button onClick={this.delHeader}>Delete Header</button>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      // class Child extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //     this.state = {};
+      //   }
+      //   componentWillUmount() {
+      //     alert("This component will be unmounter");
+      //   }
+
+      //   render() {
+      //     return <h1>Hello Liam!</h1>;
+      //   }
+      // }
+
+      // ReactDOM.render(<Container />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
